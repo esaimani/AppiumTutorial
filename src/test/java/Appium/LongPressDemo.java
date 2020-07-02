@@ -21,7 +21,7 @@ public class LongPressDemo {
 
     public static void main(String[] args) throws MalformedURLException {
 
-        File appDir = new File("/Users/enavamani/Downloads/apks");
+        File appDir = new File("/Users/enavamani/eBay Projects/LearnAppium/LearnAppium/src/resources");
         File app = new File(appDir, "ApiDemos-debug.apk");
         System.out.println(app.getAbsolutePath());
 

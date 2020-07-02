@@ -18,10 +18,10 @@ public class DragDropDemo {
     static AppiumDriver<MobileElement> driver;
 
     public static void main(final String[] args) throws MalformedURLException {
-        final File appDir = new File("/Users/enavamani/Downloads/apks");
-        final File app = new File(appDir, "ApiDemos-debug.apk");
+        File appDir = new File("/Users/enavamani/eBay Projects/LearnAppium/LearnAppium/src/resources");
+        File app = new File(appDir, "ApiDemos-debug.apk");
 
-        final DesiredCapabilities dc = new DesiredCapabilities();
+        DesiredCapabilities dc = new DesiredCapabilities();
 
         dc.setCapability("deviceName", "emulator-5554");
         dc.setCapability("platformName", "Android");
