@@ -4,17 +4,12 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
-import com.google.inject.spi.Element;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 import static java.time.Duration.ofSeconds;
@@ -32,8 +27,6 @@ public class DragDropDemo {
         dc.setCapability("platformName", "Android");
         dc.setCapability("appPackage", "io.appium.android.apis");
         dc.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
-
-        // dc.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 
         driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

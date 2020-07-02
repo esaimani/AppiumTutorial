@@ -4,12 +4,9 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import org.testng.Assert;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
@@ -34,8 +31,7 @@ public class LongPressDemo {
         dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
         dc.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-        // dc.setCapability("appPackage", "com.android.calculator2");
-        // dc.setCapability("appActivity", "com.android.calculator2.Calculator");
+
         driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
