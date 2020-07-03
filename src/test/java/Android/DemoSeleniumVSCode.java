@@ -1,4 +1,4 @@
-package Appium;
+package Android;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
@@ -22,5 +22,4 @@ public class DemoSeleniumVSCode {
         driver.close();
 
     }
-
 }

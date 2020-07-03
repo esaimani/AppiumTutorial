@@ -1,4 +1,4 @@
-package Appium;
+package Android;
 
 import java.net.MalformedURLException;
 import java.net.URL;
