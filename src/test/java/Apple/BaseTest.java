@@ -1,5 +1,6 @@
 package Apple;
 
+import java.io.File;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -37,15 +38,18 @@ public class BaseTest {
     public static IOSDriver<IOSElement> capabilities(String ip, int port) throws MalformedURLException {
         IOSDriver<IOSElement> driver;
 
+        File src = new File("/Users/enavamani/eBay Projects/LearnAppium/LearnAppium/src/resources/");
+        File appPath = new File(src, "UICatalog.app");
+
         DesiredCapabilities dc = new DesiredCapabilities();
 
         dc.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 8");
         dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");
         dc.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.5");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
-        dc.setCapability(MobileCapabilityType.APP,
-                "/Users/enavamani/Library/Developer/Xcode/DerivedData/UICatalog-gindjevwrfnmrndukjmnfxtdbskl/Build/Products/Debug-iphonesimulator/UICatalog.app");
+        dc.setCapability(MobileCapabilityType.APP, appPath.getAbsolutePath());
         dc.setCapability("useNewWDA", true);
+        dc.setCapability("noReset", true);
         driver = new IOSDriver<>(new URL("http://" + ip + ":" + port + "/wd/hub"), dc);
 
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
